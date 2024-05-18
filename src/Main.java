@@ -31,14 +31,14 @@ public class Main {
             }
 
             if (Objects.equals(senha, senhaConfirm)){
-                User NovoUser = new User(nome, senha, email);
+                Usuario novoUsuario = new Usuario(nome, senha, email);
                 logado = true;
                 System.out.println("Sucesso!");
-                System.out.println("Seu saldo atual é de R$ " + NovoUser.getSaldo());
+                System.out.println("Seu saldo atual é de R$ " + novoUsuario.getSaldo());
                 System.out.println("Adicione um pix!");
                 double valor = scan.nextDouble();
-                NovoUser.pix(valor);
-                System.out.println("Seu saldo atual é de R$ " + NovoUser.getSaldo());
+                novoUsuario.pix(valor);
+                System.out.println("Seu saldo atual é de R$ " + novoUsuario.getSaldo());
 
                 while (on){
                     System.out.println("O que você deseja fazer?");
