@@ -4,10 +4,13 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
+        Conexao conn = new Conexao();
         boolean logado = false;
         boolean on = true;
 
-        while (logado == false){
+        conn.insertUsers();
+
+        /*while (logado == false){
             System.out.println("Digite seu nome: ");
             String nome = scan.nextLine();
 
@@ -73,6 +76,6 @@ public class Main {
                     }
                 }
             }
-        }
+        }*/
     }
 }
