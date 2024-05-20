@@ -8,74 +8,32 @@ public class Main {
         boolean logado = false;
         boolean on = true;
 
-        conn.insertUsers();
+        while (on) {
+            System.out.println("O que gostaria de fazer? \n1 - login \n2 - atualizar nome \n3 - depositar \n4 - sair ");
 
-        /*while (logado == false){
-            System.out.println("Digite seu nome: ");
-            String nome = scan.nextLine();
+            String escolha = scan.nextLine();
 
-            System.out.println("Digite seu email: ");
-            String email = scan.nextLine();
+            switch (escolha.toLowerCase()) {
+                case "login", "1": {
+                    conn.insertUsers();
+                    break;
+                }
 
-            System.out.println("Crie uma senha: ");
-            String senha = scan.nextLine();
+                case "atualizar nome", "2": {
+                    conn.updateName();
+                    break;
+                }
 
-            System.out.println("Confirme sua senha: ");
-            String senhaConfirm = scan.nextLine();
+                case "depositar", "3":{
+                    conn.depositar();
+                    break;
+                }
 
-            while (!Objects.equals(senha, senhaConfirm)){
-                System.out.println("Algo deu errado. Tente novamente");
-
-                System.out.println("Crie uma senha: ");
-                senha = scan.nextLine();
-
-                System.out.println("Confirme sua senha: ");
-                senhaConfirm = scan.nextLine();
-            }
-
-            if (Objects.equals(senha, senhaConfirm)){
-                Usuario novoUsuario = new Usuario(nome, senha, email);
-                logado = true;
-                System.out.println("Sucesso!");
-                System.out.println("Seu saldo atual é de R$ " + novoUsuario.getSaldo());
-                System.out.println("Adicione um pix!");
-                double valor = scan.nextDouble();
-                novoUsuario.pix(valor);
-                System.out.println("Seu saldo atual é de R$ " + novoUsuario.getSaldo());
-
-                while (on){
-                    System.out.println("O que você deseja fazer?");
-                    System.out.println("- 'A' para adicionar livro\n - 'Sair' para sair do programa");
-                    String escolha = scan.nextLine();
-                    escolha = escolha.toLowerCase();
-                    switch (escolha){
-                        case "a": {
-                            System.out.println("Deseja adicionar um novo livro? precisamos de algumas informações...");
-                            System.out.println("Adicione o titulo: ");
-                            String titulo = scan.nextLine();
-                            System.out.println("Adicione a classificação: ");
-                            String classificacao = scan.nextLine();
-                            System.out.println("Adicione o autor: ");
-                            String autor = scan.nextLine();
-                            System.out.println("Adicione o preço: ");
-                            double preco = scan.nextDouble();
-
-                            Livro novoLivro = new Livro(titulo, classificacao, autor, preco);
-
-                            System.out.println(novoLivro.getTitulo());
-                            System.out.println(novoLivro.getAutor());
-                            System.out.println(novoLivro.getPreco());
-                            System.out.println(novoLivro.getClassificacao());
-
-                            break;
-                        }
-                        case "sair":{
-                            on = false;
-                            break;
-                        }
-                    }
+                case "sair", "4": {
+                    on = false;
+                    break;
                 }
             }
-        }*/
+        }
     }
 }
